@@ -1,2 +1,3 @@
-# annette
-HTTP Client
+# Annette -HTTP Client-
+
+Annette is a simple HTTP client.
