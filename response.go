@@ -54,6 +54,26 @@ func (r *Response) Uncompressed() bool {
 	return r.res.Uncompressed
 }
 
+func (r *Response) IsStatus100s() bool {
+	return r.res.StatusCode < 200
+}
+
+func (r *Response) IsStatus200s() bool {
+	return r.res.StatusCode >= 200 && r.res.StatusCode < 300
+}
+
+func (r *Response) IsStatus300s() bool {
+	return r.res.StatusCode >= 300 && r.res.StatusCode < 400
+}
+
+func (r *Response) IsStatus400s() bool {
+	return r.res.StatusCode >= 400 && r.res.StatusCode < 500
+}
+
+func (r *Response) IsStatus500s() bool {
+	return r.res.StatusCode >= 500
+}
+
 func (r *Response) IsStatus100() bool {
 	return r.res.StatusCode == http.StatusContinue
 }
